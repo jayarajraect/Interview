@@ -11,8 +11,8 @@ function SideNav(props) {
            </div>
            <ul className="nav_list">
                <li><NavLink exact activeClassName="active"  to={'/'}><img src={imagePath('./add-user.png').default} alt="add user" /> Add User</NavLink></li>
-               <li><NavLink activeClassName="active"  to={'/users'}><img src={imagePath('./users.png').default} alt="user" /> Users</NavLink></li>
-               <li><NavLink activeClassName="active"  to={'/weather'}><img src={imagePath('./weather.png').default} alt="weather" /> Weather</NavLink></li>
+               <li><NavLink exact activeClassName="active"  to={'/users'}><img src={imagePath('./users.png').default} alt="user" /> Users</NavLink></li>
+               <li><NavLink exact activeClassName="active"  to={'/weather'}><img src={imagePath('./weather.png').default} alt="weather" /> Weather</NavLink></li>
            </ul>
        </div>
     );

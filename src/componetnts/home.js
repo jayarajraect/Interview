@@ -7,7 +7,6 @@ function Home(props) {
     const formHandler = (e) => {
         setcolletectdata({...colletectdata , [e.target.name] : e.target.value})
         seterrordata({...errordata , [e.target.name] : ''}) 
-        console.log(colletectdata)
     }
     useEffect(() => {
         var today = new Date();
@@ -22,10 +21,16 @@ function Home(props) {
         setcolletectdata({...colletectdata , 'age' : age})
     }, [colletectdata.date_of_birth]);
     useEffect(() => {
+        let old_sign_updata = JSON.parse(localStorage.getItem("storedUserDetails"))
+        if(old_sign_updata){
+            setuserdetails(old_sign_updata)
+        }
+    },[])
+    useEffect(() => {
         localStorage.setItem("storedUserDetails" , JSON.stringify(userdetails));
         setcolletectdata({});
         seterrordata({});
-    }, [userdetails ]);
+    }, [userdetails]);
                 
     const  submitdata = (event) => {
         event.preventDefault();
@@ -59,8 +64,6 @@ function Home(props) {
             errorcount += 1; 
         }
         else if(errorcount === 0){
-            
-            console.log('dfsf' , colletectdata)
             setuserdetails([...userdetails , colletectdata]);
         }
     }

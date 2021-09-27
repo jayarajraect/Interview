@@ -3,7 +3,7 @@ import {imagePath} from '../asserts/ImagePath';
 const userdata = JSON.parse(localStorage.getItem('storedUserDetails'))
 function Users(props) {
     const[searchKey , setsearchkey] = useState('')
-    const[userdetails , setuserdetails] = useState([])
+    const[userdetails , setuserdetails] = useState(userdata)
     const serarchoperation = (e) =>{
         setsearchkey(e.target.value)
     }
@@ -44,7 +44,6 @@ function Users(props) {
                 <li key={userData.phoneNumber+j}>
                     <img className="user_img" src={imagePath('./user-icon.png').default} /> 
                     <div className="user_details">{userData.username} - {userData.age} - {userData.state}</div>
-                    <img className="menu_icon" src={imagePath('./menu.png').default} /> 
                 </li>
             ))}
                 </ul>
