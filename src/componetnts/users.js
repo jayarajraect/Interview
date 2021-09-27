@@ -4,8 +4,8 @@ const userdata = JSON.parse(localStorage.getItem('storedUserDetails'))
 function Users(props) {
     const[searchKey , setsearchkey] = useState('')
     const[userdetails , setuserdetails] = useState(userdata)
-    const serarchoperation = (e) =>{
-        setsearchkey(e.target.value)
+    const serarchoperation = (e) => {
+        setsearchkey(e.target.value);
     }
     useEffect(() => {
         const results = userdata.filter(userinfo => userinfo.username.toLowerCase().includes(searchKey));

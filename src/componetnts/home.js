@@ -6,7 +6,7 @@ function Home(props) {
     const[errordata , seterrordata] = useState({});
     const formHandler = (e) => {
         setcolletectdata({...colletectdata , [e.target.name] : e.target.value})
-        seterrordata({...errordata , [e.target.name] : ''})
+        seterrordata({...errordata , [e.target.name] : ''});
     }
     useEffect(() => {
         var today = new Date();

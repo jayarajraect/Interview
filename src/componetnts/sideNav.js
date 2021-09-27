@@ -1,5 +1,5 @@
 import React from 'react';
-import {NavLink} from 'react-router-dom'
+import {NavLink} from 'react-router-dom';
 import {imagePath} from '../asserts/ImagePath';
 function SideNav(props) {
     return (
